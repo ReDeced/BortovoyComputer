@@ -16,6 +16,8 @@ if current_version != last_version:
         file.write(requests.get(f"{repo}/generate_voice.py").text)
     with open("main.py", "w") as file:
         file.write(requests.get(f"{repo}/main.py").text)
+    with open("version.txt", "w"):
+        file.write(last_version)
     print("Обновление завершено")
 
 print("Запуск")
